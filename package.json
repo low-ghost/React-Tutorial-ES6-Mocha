@@ -1,30 +1,56 @@
 {
-  "name": "react-tutorial",
-  "version": "0.0.0",
-  "description": "Code from the React tutorial.",
-  "main": "server.js",
-  "dependencies": {
-    "body-parser": "^1.4.3",
-    "express": "^4.4.5"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/reactjs/react-tutorial.git"
-  },
-  "keywords": [
-    "react",
-    "tutorial",
-    "comment",
-    "example"
-  ],
-  "author": "petehunt",
-  "bugs": {
-    "url": "https://github.com/reactjs/react-tutorial/issues"
-  },
-  "homepage": "https://github.com/reactjs/react-tutorial"
+    "name": "react-tutorial",
+    "version": "0.0.0",
+    "description": "Code from the React tutorial.",
+    "main": "server.js",
+    "dependencies": {
+        "body-parser": "^1.4.3",
+        "express": "^4.4.5",
+        "react": "^0.13.0-beta.1",
+        "react-tools": "^0.13.0-beta.1"
+    },
+    "devDependencies": {
+        "blanket": "^1.1.6",
+        "coveralls": "^2.11.2",
+        "glob": "^4.3.5",
+        "jsdom": "^3.1.1",
+        "mocha": "^2.0.1",
+        "mocha-lcov-reporter": "0.0.1"
+    },
+    "variables": {
+        "uno": "Spanish for 1"
+    },
+    "scripts": {
+        "samplevar": "echo in bash uno is ${npm_package_variables_uno} in node it is && node <<EOD\nconsole.log(process.env.npm_package_variables_uno)\nEOD\n",
+        "test": "mocha --compilers .:tests/compiler.js tests/*-test.js",
+        "to5": "6to5 ~/Downloads/react-tutorial/public/scripts/es6 --out-dir ~/Downloads/react-tutorial/public/scripts",
+        "origJS": "curl -o public/scripts/original/example.js https://raw.githubusercontent.com/reactjs/react-tutorial/master/public/scripts/example.js",
+        "start": "node server.js"
+    },
+    "config": {
+        "blanket": {
+            "pattern": "src",
+            "data-cover-never": [
+                "dist",
+                "node_modules",
+                "tests"
+            ],
+            "loader": "../../../tests/blanket-stub-jsx.js"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/reactjs/react-tutorial.git"
+    },
+    "keywords": [
+        "react",
+        "tutorial",
+        "comment",
+        "example"
+    ],
+    "author": "low_ghost",
+    "bugs": {
+        "url": "https://github.com/reactjs/react-tutorial/issues"
+    },
+    "homepage": "https://github.com/reactjs/react-tutorial"
 }

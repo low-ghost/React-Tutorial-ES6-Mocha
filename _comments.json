@@ -2,5 +2,17 @@
     {
         "author": "Pete Hunt",
         "text": "Hey there!"
+    },
+    {
+        "author": "Mike",
+        "text": "THis"
+    },
+    {
+        "author": "my name",
+        "text": "this"
+    },
+    {
+        "author": "Another",
+        "text": "comment"
     }
 ]
